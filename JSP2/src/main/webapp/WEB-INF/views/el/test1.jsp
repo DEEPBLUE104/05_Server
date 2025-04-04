@@ -47,7 +47,6 @@
         	<li>paramValues.check[0] : ${paramValues.check[0]}</li>
         	<li>paramValues.check[0] : ${paramValues.check[1]}</li>
         	<li>paramValues.check[0] : ${paramValues.check[2]}</li>
-        
         </ul>
 
 </body>
