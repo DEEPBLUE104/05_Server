@@ -73,7 +73,7 @@ public class ELTestServlet2 extends HttpServlet {
 		req.setAttribute("menu", "짬뽕(request)");
 		session.setAttribute("menu", "짜장(session)");
 		application.setAttribute("menu", "볶음밥(application)");
-		
+	
 		
 		// ---------------------------------------
 		
