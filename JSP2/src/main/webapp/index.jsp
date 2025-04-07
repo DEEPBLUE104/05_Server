@@ -49,6 +49,13 @@
     	<a href="/jstl/test">JSTL 간단히 다뤄보기</a>
     </h1>
     
+    
+    <hr>
+    
+    <h1>
+    	<a href="/book/list">책 목록 조회하기</a>
+    </h1>
+    
 	
 </body>
 </html>
