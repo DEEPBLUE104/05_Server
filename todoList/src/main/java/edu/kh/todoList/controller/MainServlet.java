@@ -1,7 +1,10 @@
 package edu.kh.todoList.controller;
 
 import java.io.IOException;
+import java.util.Map;
 
+import edu.kh.todoList.model.service.TodoListService;
+import edu.kh.todoList.model.service.todoListServiceImpl;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -25,6 +28,12 @@ public class MainServlet extends HttpServlet {
 		// 요청 -> Controller -> Service -> DAO -> DB
 		// 응답	<- view	  <-	 <-		 <-		<- 
 	
+		TodoListService service = new todoListServiceImpl();
+		
+		// 전체 할 일 목록 + 완료된 Todo 개수
+		Map<String, Object> map = service.todoListFullView();
+		
+		
 		
 	}
 	
