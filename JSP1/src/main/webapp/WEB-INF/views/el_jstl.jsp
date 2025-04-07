@@ -78,18 +78,23 @@
 	
 	<h3>JSTL c:if 문 사용해보기</h3>
 	
-	<%
-		int age = Integer.parseInt(request.getParameter("age"));
-		if(age > 20) {
-	%>
-		<h3>성인입니다(JSP 스크립틀릿으로 출력)</h3>
-	<% } %>
-	
-	<c:if test="${param.age > 20}">
-		<h3>성인입니다(JSTL 사용)</h3>
-	</c:if> 
-	<c:if test="${param.age <= 20}">
-		<h3>성인이 아닙니다(JSTL 사용)</h3>
-	</c:if>
+<%
+    String ageParam = request.getParameter("age");
+    int age = 0; // 기본값 0으로 초기화
+
+    if (ageParam != null && !ageParam.isEmpty()) {
+        try {
+            age = Integer.parseInt(ageParam);
+        } catch (NumberFormatException e) {
+            // 예외 처리: 숫자로 변환할 수 없는 값이 들어왔을 때
+            age = 0; // 기본값으로 설정 (또는 적절한 처리를 할 수 있음)
+        }
+    }
+    
+    if(age > 20) {
+%>
+    <h3>성인입니다(JSP 스크립틀릿으로 출력)</h3>
+<% } %>
+
 </body>
 </html>

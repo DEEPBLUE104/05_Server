@@ -1,6 +1,6 @@
 package edu.kh.todoList.model.service;
 
-import static edu.kh.todoList.common.JDBCTemplate.getConnection;
+import static edu.kh.todoList.common.JDBCTemplate.*;
 
 import java.sql.Connection;
 import java.util.List;
