@@ -40,6 +40,8 @@ public interface TodoListService {
 	 * @throws Exception
 	 */
 	int todoComplete(int todoNo)throws Exception;
+
+	int todoDelete(int todoNo) throws Exception;
 	
 	
 	

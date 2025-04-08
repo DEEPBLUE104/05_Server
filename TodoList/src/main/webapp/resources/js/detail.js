@@ -24,9 +24,12 @@ completeBtn.addEventListener("click", () => {
   // O(true) <-> X(false) 변경 요청하기 (GET 요청)
   location.href="/todo/complete?todoNo=" + todoNo;
   // location.href=`/todo/complete?todoNo=${todoNo}`;
-
-
 });
 
+
+const deleteBtn = document.querySelector("#deleteBtn")
+deleteBtn.addEventListener("click", () => {
+  location.href="/todo/delete?todoNo=" + todoNo;
+});
 // 삭제 버튼
 // 수정 버튼
