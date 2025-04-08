@@ -9,6 +9,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 @WebServlet("/todo/add")
 public class TodoAddServlet extends HttpServlet {
@@ -29,6 +30,14 @@ public class TodoAddServlet extends HttpServlet {
 		int result = service.todoAdd(title, detail);
 		
 		// 4. 성공/실패 메세지 세팅하기
+		String message = null;
+		if(result > 0) message = "추가 성공";
+		else 		   message = "추가 실패";
+		
+		// 5. 기존 req를 사용할 수 없기 때문에 (redirect 사용으로 내용 상실)
+		// session을 이용해서 message를 세팅
+		HttpSession session = req.getSession();
+		session.setAttribute("message", message);
 		
 		// 6. 메인페이지로 redirect(재요청)
 		
