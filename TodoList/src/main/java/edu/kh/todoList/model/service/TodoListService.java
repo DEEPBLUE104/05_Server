@@ -33,6 +33,13 @@ public interface TodoListService {
 	 * @throws Exception
 	 */
 	Todo todoDetail(int todoNo) throws Exception;
+
+	/** 완료 여부 변경 서비스
+	 * @param todoNo
+	 * @return 행의 갯수
+	 * @throws Exception
+	 */
+	int todoComplete(int todoNo)throws Exception;
 	
 	
 	

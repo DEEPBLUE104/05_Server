@@ -33,6 +33,33 @@
 
 	<div class="content">${todo.todoDetail}</div>
 
+	<div class="btn-container">
+		<div>
+			<button type="button" id="goToList">목록으로</button>
+		</div>
+		
+		<div>
+			<button id="completeBtn">완료 여부 변경</button>
+			<button id="updateBtn">수정</button>
+			<button id="deleteBtn">삭제</button>
+		</div>
+		
+	</div>
+
+	<%-- session 범위에 message가 있을 경우 --%>
+	<c:if test="${not empty sessionScope.message}">
+		<script>
+			// JS 영역
+			alert("${message}");
+			// JSP 해석순위
+			// 1순위 : Java(EL/JSTL)
+			// 2순위 : Front(HTML/CSS/JS)
+		</script>
+		
+		<%-- message를 한 번만 출력하고 제거 --%>
+		<c:remove var="message" scope="session"></c:remove>
+	</c:if>
+
 	<script src="/resources/js/detail.js"></script>
 </body>
 </html>

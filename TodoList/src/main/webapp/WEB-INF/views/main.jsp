@@ -91,6 +91,7 @@
 		<c:remove var="message" scope="session"></c:remove>
 	</c:if>
 	
+
 	<%-- js 연결 --%>
 	<script src="/resources/js/main.js"></script>
 </body>
