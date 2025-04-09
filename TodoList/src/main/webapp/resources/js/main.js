@@ -1,3 +1,10 @@
+const logout = document.querySelector("#logout");
+
+logout.addEventListener("click", () => {
+  location.href = "/logout";
+});
+
+
 // 제목이 작성되지 않은 경우 form 제출 막기
 
 const addForm = document.querySelector("#addForm");  // form 태그
@@ -21,3 +28,4 @@ addForm.addEventListener("submit", (e) => {
   }
 
 });
+

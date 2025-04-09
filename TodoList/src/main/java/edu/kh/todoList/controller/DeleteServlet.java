@@ -20,23 +20,21 @@ public class DeleteServlet extends HttpServlet {
 		try {
 					
 			int todoNo = Integer.parseInt(req.getParameter("todoNo"));
-			
-			TodoListService service = new TodoListServiceImpl();
 		
+			// 서비스 호출 후 결과 반환받기
+			TodoListService service = new TodoListServiceImpl();
 			int result = service.todoDelete(todoNo);
 			
 			HttpSession session = req.getSession();
 			
-			if(result > 0) {
-				
-				session.setAttribute("message", "삭제되었습니다.");
-				resp.sendRedirect("/");
-				return;
-			}
+			String message = null;
+			if(result > 0) message = "삭제되었습니다.";
+			else		  message = "todo가 존재하지 않습니다.";
 			
-				session.setAttribute("message", "삭제에 실패했습니다.");
-				resp.sendRedirect("/");
-				
+			session.setAttribute("message", message);
+			
+			resp.sendRedirect("/");
+			
 			
 		}catch(Exception e) {
 			e.printStackTrace();

@@ -13,6 +13,8 @@
 </head>
 <body>
 
+	<h1>${sessionScope.loginMember}</h1>
+
 	<h1>${todo.todoTitle}</h1>
 
 	<div class="complete">
