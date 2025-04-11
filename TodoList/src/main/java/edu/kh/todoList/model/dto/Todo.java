@@ -15,6 +15,6 @@ public class Todo {
 	private String todoTitle;		// todo 제목
 	private String todoDetail;		// todo 상세내용
 	private boolean todoComplete;	// todo 완료여부
-	private String regDate;			// todo 등록일
+	private String regDate;			// todo 등록일..
 	
 }
