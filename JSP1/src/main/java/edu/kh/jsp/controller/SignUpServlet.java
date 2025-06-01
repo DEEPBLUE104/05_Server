@@ -25,7 +25,7 @@ public class SignUpServlet extends HttpServlet {
 		RequestDispatcher dispatcher = req.getRequestDispatcher(path);
 		
 		// 3) HttpServletRequest / Response 두 객체를
-		//		요청 위임(forward)할 JSP에게 넘기기 //  ,..,
+		//		요청 위임(forward)할 JSP에게 넘기기 
 		dispatcher.forward(req, resp);
 		
 	}
